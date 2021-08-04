@@ -15,6 +15,7 @@ I just started the project, so there's a lot of things to improve.
 - [X]  A minor example
 - [ ]  Add more Composites
 - [ ]  Improve performance
+- [ ]  Add docs
 
 ## References
 
