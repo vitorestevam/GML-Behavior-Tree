@@ -8,7 +8,6 @@ function BTreeNode() constructor{
     }
     
     static Process = function(){
-        status = "success";
         return "success";
     }
     
@@ -38,24 +37,26 @@ function BTreeRoot(_inst): BTreeNode() constructor{
 	status = "not started";
 	array_push(children, noone);
 	vars.inst = _inst;
+	vars.running_node = noone
 	
 	static Start = function(){
 		status = "running";
 	}
 	
 	static Process = function(){
-		if(children[0] != noone){
+		
+		if(vars.running_node != noone){ //run the actual running node if exists
+			NodeProcess(vars.running_node)
+		}
+		
+		else if(children[0] != noone){ //run the entire tree
             if(status == "running"){
                 if(children[0].visited == false){
                     children[0].Init();
                     children[0].visited = true;
                 }
-				status = NodeProcess(children[0]);
-				children[0].status = status;
+				NodeProcess(children[0]);
             }
-			
-			
-            return status;
         }
     }
 	
@@ -76,7 +77,6 @@ function BTreeSequence() : BTreeComposite() constructor
                 }
                 
                 var _status = NodeProcess(_child)
-				_child.status = _status
                 
                 if(_status == "running"){
                     return "running";
