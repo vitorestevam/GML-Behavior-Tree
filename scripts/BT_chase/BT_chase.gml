@@ -1,5 +1,4 @@
-function BehaviorFind(_inst) : BTreeLeaf() constructor
-{	
+function BehaviorFind(_inst) : BTreeLeaf() constructor{	
 	inst_to_find = _inst
 
     static Process = function()
@@ -42,9 +41,8 @@ function BehaviorReach() : BTreeLeaf() constructor{
     }
 }
 
-
 function find_and_chase_bt(){
-	var _sequence = new  BTreeSequence()
+	var _sequence = new BTreeSequence()
 	with(_sequence){
 		ChildAdd(new BehaviorFind(Object3));
 	    ChildAdd(new BehaviorChase());

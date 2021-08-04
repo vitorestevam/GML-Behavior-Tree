@@ -77,8 +77,7 @@ function BTreeRoot(_inst): BTreeNode() constructor{
     }
 }
 
-function BTreeSequence() : BTreeComposite() constructor
-{
+function BTreeSequence() : BTreeComposite() constructor{
     static Process = function(){
         for(var i = 0; i < array_length(children); i++){
             var _child = children[i];
