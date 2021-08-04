@@ -9,7 +9,7 @@ function BTreeNode() constructor{
     status = BTStates.Running;
     children = [];
     visited = false;
-    vars = {inst: noone};
+    vars = {inst: noone, running_node: noone};
     
     static Init = function(){
     }
@@ -22,10 +22,17 @@ function BTreeNode() constructor{
         array_push(children, _child);
     }
 	
+			
 	static NodeProcess = function(_node){
 		_node.vars = vars;
 		var _status= _node.Process();
 		vars = _node.vars	
+		
+		//stores current node
+		if(_status == BTStates.Running and vars.running_node == noone) vars.running_node = _node
+		else if( _status != BTStates.Running and vars.running_node != noone) vars.running_node = noone
+
+			
 		return _status
 	}
 
@@ -43,7 +50,6 @@ function BTreeRoot(_inst): BTreeNode() constructor{
 	status = BTStates.Off;
 	array_push(children, noone);
 	vars.inst = _inst;
-	vars.running_node = noone
 	
 	static Start = function(){
 		status = BTStates.Running;

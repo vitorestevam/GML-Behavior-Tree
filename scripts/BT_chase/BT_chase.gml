@@ -21,13 +21,11 @@ function BehaviorChase() : BTreeLeaf() constructor{
 		var dis = point_distance(vars.inst.x,vars.inst.y,goto.x,goto.y)
 		
 		if(dis<64){
-			vars.running_node = noone
 			vars.inst.speed = 0
 			return BTStates.Success;
 		}
 		
 		else{
-			vars.running_node = self
 			vars.inst.image_blend = c_white
 			with(vars.inst) move_towards_point(goto.x,goto.y,2)
 			return BTStates.Running
