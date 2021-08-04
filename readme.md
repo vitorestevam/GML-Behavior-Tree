@@ -4,7 +4,7 @@
 
 # Behaviour Tree Friends
 
-That's a implementation of a BT to Gamemaker studio 2
+This is a implementation of a BT to Gamemaker studio 2
 
 ## Development
 
