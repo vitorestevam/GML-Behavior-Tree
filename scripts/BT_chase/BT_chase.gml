@@ -6,10 +6,10 @@ function BehaviorFind(_inst) : BTreeLeaf() constructor
     {	
 		show_debug_message("on Bfind Process");
 		var _inst = instance_nearest(vars.inst.x, vars.inst.y, inst_to_find);
-		if(_inst == noone) return "failure"
+		if(_inst == noone) return BTStates.Failure
 		else{
 			vars.inst_to_chase = _inst
-			return "success";
+			return BTStates.Success;
 		}
     }
 }
@@ -23,14 +23,14 @@ function BehaviorChase() : BTreeLeaf() constructor{
 		if(dis<64){
 			vars.running_node = noone
 			vars.inst.speed = 0
-			return "success";
+			return BTStates.Success;
 		}
 		
 		else{
 			vars.running_node = self
 			vars.inst.image_blend = c_white
 			with(vars.inst) move_towards_point(goto.x,goto.y,2)
-			return "running"
+			return BTStates.Running
 		}
 
     }
@@ -40,12 +40,18 @@ function BehaviorReach() : BTreeLeaf() constructor{
     static Process = function(){
 		show_debug_message("on Breach Process");
 		vars.inst.image_blend = c_red
-        return "success";
+        return BTStates.Success;
     }
 }
 
-function BehaviorFindAndChase() : BTreeSequence() constructor{
-    ChildAdd(new BehaviorFind(Object3));
-    ChildAdd(new BehaviorChase());
-	ChildAdd(new BehaviorReach());
+
+function find_and_chase_bt(){
+	var _sequence = new  BTreeSequence()
+	with(_sequence){
+		ChildAdd(new BehaviorFind(Object3));
+	    ChildAdd(new BehaviorChase());
+		ChildAdd(new BehaviorReach());
+	}
+	
+	return _sequence
 }

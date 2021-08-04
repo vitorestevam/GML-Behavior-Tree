@@ -1,5 +1,12 @@
+enum BTStates{
+	Running,
+	Success,
+	Failure,
+	Off,
+}
+
 function BTreeNode() constructor{
-    status = "running";
+    status = BTStates.Running;
     children = [];
     visited = false;
     vars = {inst: noone};
@@ -8,7 +15,7 @@ function BTreeNode() constructor{
     }
     
     static Process = function(){
-        return "success";
+        return BTStates.Success;
     }
     
     static ChildAdd = function(_child){
@@ -18,8 +25,7 @@ function BTreeNode() constructor{
 	static NodeProcess = function(_node){
 		_node.vars = vars;
 		var _status= _node.Process();
-		vars = _node.vars
-		
+		vars = _node.vars	
 		return _status
 	}
 
@@ -34,13 +40,13 @@ function BTreeLeaf() : BTreeNode() constructor{
 }
 
 function BTreeRoot(_inst): BTreeNode() constructor{
-	status = "not started";
+	status = BTStates.Off;
 	array_push(children, noone);
 	vars.inst = _inst;
 	vars.running_node = noone
 	
 	static Start = function(){
-		status = "running";
+		status = BTStates.Running;
 	}
 	
 	static Process = function(){
@@ -50,7 +56,7 @@ function BTreeRoot(_inst): BTreeNode() constructor{
 		}
 		
 		else if(children[0] != noone){ //run the entire tree
-            if(status == "running"){
+            if(status == BTStates.Running){
                 if(children[0].visited == false){
                     children[0].Init();
                     children[0].visited = true;
@@ -70,7 +76,7 @@ function BTreeSequence() : BTreeComposite() constructor
     static Process = function(){
         for(var i = 0; i < array_length(children); i++){
             var _child = children[i];
-            if(_child.status == "running"){
+            if(_child.status == BTStates.Running){
                 if(_child.visited == false){
                     _child.Init();
                     _child.visited = true;
@@ -78,14 +84,14 @@ function BTreeSequence() : BTreeComposite() constructor
                 
                 var _status = NodeProcess(_child)
                 
-                if(_status == "running"){
-                    return "running";
+                if(_status == BTStates.Running){
+                    return BTStates.Running;
                 }
-                else if(_status == "failure"){
-                    return "failure";
+                else if(_status == BTStates.Failure){
+                    return BTStates.Failure;
                 }
             }
         }
-        return "success";
+        return BTStates.Success;
     }
 }
