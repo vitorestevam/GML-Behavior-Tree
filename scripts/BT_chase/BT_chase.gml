@@ -1,4 +1,5 @@
 function BehaviorFind(_inst) : BTreeLeaf() constructor{	
+	name = "Find Nearest Instance";
 	inst_to_find = _inst
 
     static Process = function()
@@ -14,6 +15,8 @@ function BehaviorFind(_inst) : BTreeLeaf() constructor{
 }
 
 function BehaviorChase() : BTreeLeaf() constructor{  
+    name = "Chase Instance";
+    
     static Process = function(){
 		show_debug_message("on Bchase Process");
 		var goto = vars.inst_to_chase
@@ -34,6 +37,8 @@ function BehaviorChase() : BTreeLeaf() constructor{
 }
 
 function BehaviorReach() : BTreeLeaf() constructor{  
+    name = "On Reach";
+    
     static Process = function(){
 		show_debug_message("on Breach Process");
 		vars.inst.image_blend = c_red
@@ -41,10 +46,11 @@ function BehaviorReach() : BTreeLeaf() constructor{
     }
 }
 
+///
 function find_and_chase_bt(){
 	var _sequence = new BTreeSequence()
 	with(_sequence){
-		ChildAdd(new BehaviorFind(Object3));
+		ChildAdd(new BehaviorFind(o_mouse_follower));
 	    ChildAdd(new BehaviorChase());
 		ChildAdd(new BehaviorReach());
 	}

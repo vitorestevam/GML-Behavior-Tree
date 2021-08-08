@@ -30,7 +30,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Object3",
+  "name": "o_mouse_follower",
   "tags": [],
   "resourceType": "GMObject",
 }
