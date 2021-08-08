@@ -21,14 +21,20 @@
 #endregion
 
 /// ============================================================================
+/// DEBUG MACROS
+#macro BT_DEBUG_ON                  true        //   
+#macro BT_DEBUG_NODE_COLOR          c_white     //
+#macro BT_DEBUG_NODE_RUNNING_COLOR  c_yellow    //
+
+/// ============================================================================
 
 /// Behaviour Tree BT possible STATES and Return values 
 enum BTStates
 {
 	Running,    // If the node is current running
-	Success,    // If the node is already have succeded it task
+	Success,    // If the node is already have succeeded it task
 	Failure,    // In Case the node failed to do it task
-	Off,        // In Case the node is turned off and will not do anything
+	Off,        // In Case the node is turned off, it will do nothing
 }
 
 /// This is the BASIC Behavior Tree node. 
@@ -73,12 +79,18 @@ function BTreeNode() constructor{
             _node.Init();
         }
 		
+		/// Process node logic -> Expects to return a BTState
 		var _status = _node.Process();
 		
 		// Stores current node
-		if(_status == BTStates.Running and black_board_ref.running_node == noone) black_board_ref.running_node = _node
-		else if( _status != BTStates.Running and black_board_ref.running_node != noone) black_board_ref.running_node = noone
-			
+		/// First Case -> This node is now running and the black_board don't have any reference of the running node 
+		/// Second Case -> The current node is not running anymore and we have a running node -> Not anymore! Let's check you tree again
+		if(_status == BTStates.Running and black_board_ref.running_node == noone) 
+		    black_board_ref.running_node = _node
+		else if( _status != BTStates.Running and black_board_ref.running_node != noone) 
+		    black_board_ref.running_node = noone
+		
+		/// Return the BTState	
 		return _status
 	}
 
@@ -99,7 +111,7 @@ function BTreeRoot(_inst): BTreeNode() constructor{
 	// You can put more stuff here. All Nodes will have acess to this variables. 
     black_board = {                  
         root_reference : other,     // The Root Ref.
-        inst_ref : _inst,           // The Instance id that id be using this BT.         
+        inst_ref : _inst,           // The Instance id that will be used on this BT.         
         running_node: noone,        // The running node reference
     };
     
@@ -147,15 +159,37 @@ function BTreeSequence() : BTreeComposite() constructor{
         var _i = 0; 
         repeat(children_arr_len){
             if(children[_i].status == BTStates.Running){
-                switch( NodeProcess(children[_i++])){
+                switch( NodeProcess(children[_i])){
                     case BTStates.Running: return BTStates.Running;
                     case BTStates.Failure: return BTStates.Failure; 
                 }
             }
+            
+            ++_i;
         }
         
         return BTStates.Success;
     }
+}
+
+function BTreeSelector() : BTreeComposite() constructor{
+	name = "BT_SELECTOR";
+    
+    static Process = function(){
+        var _i = 0;
+        repeat(children_arr_len){
+            if(children[_i].status == BTStates.Running){
+                switch(NodeProcess(children[_i])){
+                    case BTStates.Running: return BTStates.Running;
+                    case BTStates.Success: return BTStates.Success;
+                }
+            }
+
+            ++_i;
+        }
+        
+        return BTStates.Failure;
+    }     
 }
 
 /// @TODO
