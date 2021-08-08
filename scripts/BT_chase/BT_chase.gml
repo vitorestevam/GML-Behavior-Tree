@@ -5,10 +5,10 @@ function BehaviorFind(_inst) : BTreeLeaf() constructor{
     static Process = function()
     {	
 		show_debug_message("on Bfind Process");
-		var _inst = instance_nearest(vars.inst.x, vars.inst.y, inst_to_find);
+		var _inst = instance_nearest(black_board_ref.inst_ref.x, black_board_ref.inst_ref.y, inst_to_find);
 		if(_inst == noone) return BTStates.Failure
 		else{
-			vars.inst_to_chase = _inst
+			black_board_ref.inst_to_chase = _inst
 			return BTStates.Success;
 		}
     }
@@ -16,20 +16,20 @@ function BehaviorFind(_inst) : BTreeLeaf() constructor{
 
 function BehaviorChase() : BTreeLeaf() constructor{  
     name = "Chase Instance";
-    
+    chase_distance = 64
     static Process = function(){
 		show_debug_message("on Bchase Process");
-		var goto = vars.inst_to_chase
-		var dis = point_distance(vars.inst.x,vars.inst.y,goto.x,goto.y)
+		var goto = black_board_ref.inst_to_chase;
+		var dis = point_distance(black_board_ref.inst_ref.x,black_board_ref.inst_ref.y,goto.x,goto.y)
 		
-		if(dis<64){
-			vars.inst.speed = 0
+		if(dis < chase_distance){
+			black_board_ref.inst_ref.speed = 0
 			return BTStates.Success;
 		}
 		
 		else{
-			vars.inst.image_blend = c_white
-			with(vars.inst) move_towards_point(goto.x,goto.y,2)
+			black_board_ref.inst_ref.image_blend = c_white
+			with(black_board_ref.inst_ref) move_towards_point(goto.x,goto.y,2)
 			return BTStates.Running
 		}
 
@@ -41,7 +41,7 @@ function BehaviorReach() : BTreeLeaf() constructor{
     
     static Process = function(){
 		show_debug_message("on Breach Process");
-		vars.inst.image_blend = c_red
+		black_board_ref.inst_ref.image_blend = c_red
         return BTStates.Success;
     }
 }

@@ -40,10 +40,7 @@ function BTreeNode() constructor{
     children = [];                  // The node children. Array cause it faster and we don't have to clean it later 
     children_arr_len = 0;           // The actual chidren array lenght, that way, we don't have to check every step the length of the children, making this a little more faster 
     
-    vars = {                        // All exclusive variables of the node will be placed here, kinda Blackboard 
-        inst: noone,                // This info will be parced from node to node, making possible to make a more faster 
-        running_node: noone,        // BT communication cause we dont have pointers.
-    };
+    black_board_ref = noone;        // The reference to blackboard struct. This will be set on BTreeRoot.
     
     /// When visiting the node for the first time, 
     /// you can call this for some extra configs
@@ -61,24 +58,26 @@ function BTreeNode() constructor{
         ++children_arr_len;
     }
 	
-    /// Here's the good stuff. Cause we can't user blackboard properly
+    /// Here's the good stuff. / @jalesjefferson -> Now only the reference will be parsed when visited
     /// We have to make sure the root have the reference to the running node
     /// This way, we can jump to this node to continue it task.
+    /// This function is called by the current node scope. 
 	static NodeProcess = function(_node){
 		
-		/// Case it's first time we visiting this node, call it Init function
+		/// Case it's first time we visiting this node. 
+		/// Parse the blackboard reference
+		/// Set the visited flag on, them init Node. 
 		if(_node.visited == false){
-            _node.Init();
+            _node.black_board_ref = black_board_ref; 
             _node.visited = true;
+            _node.Init();
         }
 		
-		_node.vars = vars;
 		var _status = _node.Process();
-		vars = _node.vars	
 		
 		// Stores current node
-		if(_status == BTStates.Running and vars.running_node == noone) vars.running_node = _node
-		else if( _status != BTStates.Running and vars.running_node != noone) vars.running_node = noone
+		if(_status == BTStates.Running and black_board_ref.running_node == noone) black_board_ref.running_node = _node
+		else if( _status != BTStates.Running and black_board_ref.running_node != noone) black_board_ref.running_node = noone
 			
 		return _status
 	}
@@ -93,10 +92,19 @@ function BTreeNode() constructor{
 function BTreeRoot(_inst): BTreeNode() constructor{
 	name = "BT_ROOT";
 	status = BTStates.Off;          // Starts off, in that case, will only work if Init    
-	vars.inst = _inst;              // The Instance id that id be using this BT. 
 	array_push(children, noone);    // The BTRoot can only have one child  
 	
-	
+	// All exclusive variables of the node will be placed here, kinda Blackboard
+	// This info will be parced from node to node, making possible to make a more faster
+	// You can put more stuff here. All Nodes will have acess to this variables. 
+    black_board = {                  
+        root_reference : other,     // The Root Ref.
+        inst_ref : _inst,           // The Instance id that id be using this BT.         
+        running_node: noone,        // The running node reference
+    };
+    
+    black_board_ref = black_board; // The blackboard ref to parse to everyone else on NodeProcess
+    
 	/// @override / @jalesJefferson -> Changed from Start() to Init(), to use the inherent stuff
 	static Init = function(){
 		status = BTStates.Running;
@@ -105,9 +113,9 @@ function BTreeRoot(_inst): BTreeNode() constructor{
 	/// @override Called on every frame by a step event
 	static Process = function(){
         /// Run the actual running node, if it exists
-		if(vars.running_node != noone){ 
-			NodeProcess(vars.running_node)
-		}
+		if(black_board.running_node != noone)
+			NodeProcess(black_board.running_node);
+		
         /// Run the entire tree | @jalesjefferson moved the visited check to NodeProcess 
 		else if(children[0] != noone){
 		    if(status == BTStates.Running)
