@@ -5,7 +5,7 @@
     {"id":{"name":"Object2","path":"objects/Object2/Object2.yy",},"order":1,},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":1,},
     {"id":{"name":"BehaviourTree","path":"scripts/BehaviourTree/BehaviourTree.yy",},"order":0,},
-    {"id":{"name":"Object3","path":"objects/Object3/Object3.yy",},"order":2,},
+    {"id":{"name":"o_mouse_follower","path":"objects/o_mouse_follower/o_mouse_follower.yy",},"order":2,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
