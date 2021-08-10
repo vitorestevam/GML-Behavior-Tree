@@ -4,8 +4,8 @@
 
 - [x]  Selector
 - [x]  Sequence
-- []   Succeeder (vitor)
-- []   Inverter (jeff)
+- [ ]   Succeeder (vitor)
+- [ ]   Inverter (jeff)
 
 
 ## exemplo 17/08 (opcional)
