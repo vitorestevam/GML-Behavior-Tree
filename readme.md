@@ -8,7 +8,7 @@ This is a implementation of a BT to Gamemaker studio 2
 
 ## Development
 
-I just started the project, so there's a lot of things to improve.
+We just started the project, so there's a lot of things to improve.
 
 - [X]  Base nodes from BT
 - [X]  Selector Composite
@@ -16,6 +16,8 @@ I just started the project, so there's a lot of things to improve.
 - [ ]  Add more Composites
 - [ ]  Improve performance
 - [ ]  Add docs
+
+[Click here to see our todo file](./todo.md)
 
 ## References
 
