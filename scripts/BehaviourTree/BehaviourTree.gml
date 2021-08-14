@@ -140,7 +140,7 @@ function BTreeRoot(_inst): BTreeNode() constructor{
 	static ChildAdd = function(child_node){
 		children[0] = child_node;
 		children_arr_len = 1;
-    }
+  }
 }
 
 /// BTreeSequence Composite! 
@@ -192,8 +192,27 @@ function BTreeSelector() : BTreeComposite() constructor{
     }     
 }
 
-/// @TODO
-function BTreeComposite() : BTreeNode() constructor{}
+///
+function BTreeInverter() : BTreeDecorator() constructor{
+	name = "BT_Inverter";
+	
+	static Process = function(){
+		var _state = NodeProcess(children[0]);
+		switch(_state){
+			case BTStates.Failure: return BTStates.Success;
+			case BTStates.Success: return BTStates.Failure;
+			default: return _state;
+		}
+	}
+}
 
-/// @TODO
+/// Decorators can only have one child
+function BTreeDecorator() : BTreeNode() constructor{
+	static ChildAdd = function(child_node){
+		children[0] = child_node;
+		children_arr_len = 1;
+  }
+}
+
+function BTreeComposite() : BTreeNode() constructor{}
 function BTreeLeaf() : BTreeNode() constructor{}
