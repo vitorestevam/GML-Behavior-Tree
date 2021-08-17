@@ -206,6 +206,15 @@ function BTreeInverter() : BTreeDecorator() constructor{
 	}
 }
 
+function BTreeSucceeder() : BTreeDecorator() constructor{
+	name = "BT_Succeeder";
+	
+	static Process = function(){
+		var _state = NodeProcess(children[0]);
+		return BTStates.Success;
+	}
+}
+
 /// Decorators can only have one child
 function BTreeDecorator() : BTreeNode() constructor{
 	static ChildAdd = function(child_node){
