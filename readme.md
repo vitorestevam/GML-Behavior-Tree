@@ -10,6 +10,14 @@ We just started the project, so there's a lot of things to improve.
 
 [Click here to see our board ](https://github.com/VitorEstevam/Behaviour-Tree-Friends/projects/1)
 
+## Contributors
+
+<a href="https://github.com/VitorEstevam/Behaviour-Tree-Friends/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=VitorEstevam/Behaviour-Tree-Friends" />
+</a>
+
+Made with [contributors-img](https://contrib.rocks).
+
 ## References
 
 - https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence,_robotics_and_control)
