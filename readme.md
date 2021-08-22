@@ -1,22 +1,29 @@
-<div align="center"/>
-<img src="./readme_header.png" width="400"> </img>
-<div align="left"/>
+<div align="center" />
 
-# Behaviour Tree Friends
+<img align="right" src="./readme_logo.png" width="500"/>
 
-This is a implementation of a BT to Gamemaker studio 2.3+
 
-We just started the project, so there's a lot of things to improve.
+<div align="left" />
 
-[Click here to see our board ](https://github.com/VitorEstevam/Behaviour-Tree-Friends/projects/1)
+# GML Behaviour Tree
+
+The classic Behaviour Tree to GMS 2.3+
+
+if you don't know what you're doing here our need to learn what is a Behaviour Tree, you can see it on our [references](#references)
+
+## how to use
+
+todo
+
+## how its builded
+
+See details on [builded.md](./builded.md)
 
 ## Contributors
 
 <a href="https://github.com/VitorEstevam/Behaviour-Tree-Friends/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VitorEstevam/Behaviour-Tree-Friends" />
 </a>
-
-Made with [contributors-img](https://contrib.rocks).
 
 ## References
 

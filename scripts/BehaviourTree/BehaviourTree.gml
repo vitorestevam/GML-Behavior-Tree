@@ -52,8 +52,7 @@ function BTreeNode() constructor{
     /// you can call this for some extra configs
     static Init = function(){}
     
-    /// Called in every step of the game. 
-    /// Always have to return something and have to be the one of the BTStates enum
+    /// Called in every step of the game. Always have to return something and have to be the one of the BTStates enum
     static Process = function(){    
         return BTStates.Success;
     }
