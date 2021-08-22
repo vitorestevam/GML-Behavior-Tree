@@ -14,6 +14,8 @@ if you don't know what you're doing here or need to learn what is a Behavior Tre
 
 See details on [example.md](./example.md)
 
+(it's good to have a smart and simple example here. Just some lines)
+
 ## How the nodes works
 
 See details on [nodes.md](./nodes.md)
