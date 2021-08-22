@@ -12,11 +12,11 @@ if you don't know what you're doing here or need to learn what is a Behavior Tre
 
 ## How to use
 
-See details about how to create behaviors on [example.md](./example.md)
+See details on [example.md](./example.md)
 
-## Node docs
+## How the nodes works
 
-See details about the node implementation on [nodes.md](./nodes.md)
+See details on [nodes.md](./nodes.md)
 
 ## How its builded
 
