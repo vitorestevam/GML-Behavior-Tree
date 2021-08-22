@@ -1,6 +1,6 @@
 <div align="center" />
 
-<img align="right" src="./readme_logo.png" width="500"/>
+<img align="right" src="./readme_logo.png" width="300"/>
 
 
 <div align="left" />
