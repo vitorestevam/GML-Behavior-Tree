@@ -10,11 +10,15 @@ The classic Behaviour Tree to GMS 2.3+
 
 if you don't know what you're doing here our need to learn what is a Behaviour Tree, you can see it on our [references](#references)
 
-## how to use
+## How to use
 
 todo
 
-## how its builded
+## Node docs
+
+See details about the node implementation on [nodes.md](./nodes.md)
+
+## How its builded
 
 See details on [builded.md](./builded.md)
 
