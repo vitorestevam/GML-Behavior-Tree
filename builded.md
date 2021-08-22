@@ -8,7 +8,7 @@
 
 The classic Behaviour Tree to GMS 2.3+
 
-## how its builded
+## How its builded
 
 Our implementation is maded all over the same BTreeNode struct:
 
