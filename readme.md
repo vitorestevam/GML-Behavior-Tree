@@ -8,7 +8,7 @@
 
 The classic Behavior Tree to GMS 2.3+
 
-if you don't know what you're doing here or need to learn what is a Behavior Tree, you can see it on our [references](#references)
+> if you don't know what you're doing here or need to learn what is a Behavior Tree, you can see it on our [references](#references)
 
 ## How to use
 
