@@ -30,6 +30,16 @@ A decorator is a node that can have only one child. They will process this child
 | Succeeder        | Process the child and always return Success|
 | Inverter         | Process the child and invert the received Status|
 
+### Leafs
+
+A leaf node is a node that will process the behavior. This need to return one of the BTStates enum.
+
+You can see details about how to create behaviors in [example.md](./example.md)
+
+### Root
+
+The Root node is a custom node that will start our tree. Is responsible by startup the tree, init our Blackboard and some other configs.
+
 ## References
 
 - https://www.gamasutra.com/blogs/ChrisSimpson/20140717/221339/Behavior_trees_for_AI_How_they_work.php

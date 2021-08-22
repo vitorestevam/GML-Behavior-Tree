@@ -12,7 +12,7 @@ if you don't know what you're doing here or need to learn what is a Behavior Tre
 
 ## How to use
 
-todo
+See details about how to create behaviors on [example.md](./example.md)
 
 ## Node docs
 
