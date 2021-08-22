@@ -1,3 +1,9 @@
+<div align="center" />
+
+<img align="right" src="./readme_logo.png" width="300"/>
+
+<div align="left" />
+
 # GML Behaviour Tree
 
 The classic Behaviour Tree to GMS 2.3+
