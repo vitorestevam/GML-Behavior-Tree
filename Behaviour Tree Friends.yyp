@@ -1,12 +1,12 @@
 {
   "resources": [
-    {"id":{"name":"BT_chase","path":"scripts/BT_chase/BT_chase.yy",},"order":4,},
-    {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},"order":0,},
-    {"id":{"name":"Object2","path":"objects/Object2/Object2.yy",},"order":1,},
-    {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":1,},
-    {"id":{"name":"BehaviourTree","path":"scripts/BehaviourTree/BehaviourTree.yy",},"order":0,},
-    {"id":{"name":"o_mouse_follower","path":"objects/o_mouse_follower/o_mouse_follower.yy",},"order":2,},
-    {"id":{"name":"__BTConfig","path":"scripts/__BTConfig/__BTConfig.yy",},"order":5,},
+    {"id":{"name":"behaviour_chase","path":"scripts/behaviour_chase/behaviour_chase.yy",},"order":3,},
+    {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},"order":4,},
+    {"id":{"name":"o_enemy","path":"objects/o_enemy/o_enemy.yy",},"order":2,},
+    {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":5,},
+    {"id":{"name":"BehaviourTree","path":"scripts/BehaviourTree/BehaviourTree.yy",},"order":2,},
+    {"id":{"name":"o_mouse_follower","path":"objects/o_mouse_follower/o_mouse_follower.yy",},"order":1,},
+    {"id":{"name":"__BTConfig","path":"scripts/__BTConfig/__BTConfig.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -31,10 +31,8 @@
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "Folders": [
-    {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Scripts.yy","order":5,"resourceVersion":"1.0","name":"Scripts","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Objects.yy","order":9,"resourceVersion":"1.0","name":"Objects","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Rooms.yy","order":10,"resourceVersion":"1.0","name":"Rooms","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/GMLBehaviourTree.yy","order":11,"resourceVersion":"1.0","name":"GMLBehaviourTree","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/example.yy","order":12,"resourceVersion":"1.0","name":"example","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
@@ -44,7 +42,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.3.574",
+    "IDEVersion": "2.3.3.570",
   },
   "resourceVersion": "1.4",
   "name": "Behaviour Tree Friends",

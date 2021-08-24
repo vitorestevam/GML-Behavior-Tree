@@ -28,11 +28,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "example",
+    "path": "folders/example.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Object2",
+  "name": "o_enemy",
   "tags": [],
   "resourceType": "GMObject",
 }
