@@ -1,6 +1,6 @@
 {
   "resources": [
-    {"id":{"name":"behaviour_chase","path":"scripts/behaviour_chase/behaviour_chase.yy",},"order":3,},
+    {"id":{"name":"behavior_chase","path":"scripts/behavior_chase/behavior_chase.yy",},"order":3,},
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},"order":4,},
     {"id":{"name":"o_enemy","path":"objects/o_enemy/o_enemy.yy",},"order":2,},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":5,},
@@ -31,7 +31,7 @@
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "Folders": [
-    {"folderPath":"folders/GMLBehaviourTree.yy","order":11,"resourceVersion":"1.0","name":"GMLBehaviourTree","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/GMLBehaviorTree.yy","order":11,"resourceVersion":"1.0","name":"GMLBehaviorTree","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/example.yy","order":12,"resourceVersion":"1.0","name":"example","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [

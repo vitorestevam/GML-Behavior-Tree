@@ -6,7 +6,7 @@
     "path": "folders/example.yy",
   },
   "resourceVersion": "1.0",
-  "name": "behaviour_chase",
+  "name": "behavior_chase",
   "tags": [],
   "resourceType": "GMScript",
 }

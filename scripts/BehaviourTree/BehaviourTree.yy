@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "GMLBehaviourTree",
-    "path": "folders/GMLBehaviourTree.yy",
+    "name": "GMLBehaviorTree",
+    "path": "folders/GMLBehaviorTree.yy",
   },
   "resourceVersion": "1.0",
   "name": "BehaviourTree",
