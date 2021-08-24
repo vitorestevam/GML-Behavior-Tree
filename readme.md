@@ -11,18 +11,33 @@ The classic Behavior Tree to GMS 2.3+
 > if you don't know what you're doing here or need to learn what is a Behavior Tree, you can see it on our [references](#references)
 
 ## How to use
+``` gml
+//create
+function TaskChangeColor() : BTreeLeaf() constructor{
+	name = "TaskChangeColor";
+	
+	/// @override
+	static Process = function(){
+		black_board_ref.user.image_blend = c_yellow
+		return BTStates.Success;
+	}
+}
+
+bt_root = new BTreeRoot(id);
+var change_color = new TaskChangeColor()
+bt_root.ChildAdd(change_color)
+
+bt_root.Init();
+
+//step
+bt_root.Process();
+```
 
 See details on [example.md](./example.md)
 
-(it's good to have a smart and simple example here. Just some lines)
+## [Nodes docs](./nodes.md)
 
-## How the nodes works
-
-See details on [nodes.md](./nodes.md)
-
-## How its builded
-
-See details on [builded.md](./builded.md)
+## [How its builded](./builded.md)
 
 ## Contributors
 
