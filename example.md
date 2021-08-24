@@ -11,7 +11,9 @@ The classic Behavior Tree to GMS 2.3+
 
 ## How to use
 
-    You can see this example with the projects file. We choose no enter in game maker details like objects, it's just the Behavior tree use.
+    You can see this example with the projects file. 
+    We choose no enter in game maker details like objects, etc.
+    it's just the Behavior tree use.
 
 This example implements this tree:
 
