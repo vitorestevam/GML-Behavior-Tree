@@ -33,7 +33,7 @@ bt_root.Init();
 bt_root.Process();
 ```
 
-See details on [example.md](./example.md)
+### See details on [example.md](./example.md)
 
 ## [Nodes docs](./nodes.md)
 
