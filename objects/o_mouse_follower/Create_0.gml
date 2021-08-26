@@ -1,0 +1,3 @@
+/// @description 
+life = 100;
+

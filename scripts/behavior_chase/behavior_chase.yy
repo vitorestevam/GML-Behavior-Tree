@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "example",
+    "path": "folders/example.yy",
   },
   "resourceVersion": "1.0",
-  "name": "BT_chase",
+  "name": "behavior_chase",
   "tags": [],
   "resourceType": "GMScript",
 }

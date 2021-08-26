@@ -6,7 +6,7 @@
     "path": "folders/GMLBehaviorTree.yy",
   },
   "resourceVersion": "1.0",
-  "name": "BehaviourTree",
+  "name": "__BTConfig",
   "tags": [],
   "resourceType": "GMScript",
 }
