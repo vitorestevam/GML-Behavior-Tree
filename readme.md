@@ -33,11 +33,11 @@ bt_root.Init();
 bt_root.Process();
 ```
 
-### See details on [example.md](./example.md)
+## More details on
 
-## [Nodes docs](./nodes.md)
-
-## [How its builded](./builded.md)
+- [Usage example](./example.md)
+- [Nodes docs](./nodes.md)
+- [How its builded](./builded.md)
 
 ## Contributors
 
@@ -50,4 +50,4 @@ bt_root.Process();
 - https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence,_robotics_and_control)
 - https://www.gamasutra.com/blogs/ChrisSimpson/20140717/221339/Behavior_trees_for_AI_How_they_work.php
 
-And a especial thank you to [squircledev](https://github.com/squircledev) how shared some drafts with us :)
+And a especial thank you to [squircledev](https://github.com/squircledev) who shared some drafts with us :)
